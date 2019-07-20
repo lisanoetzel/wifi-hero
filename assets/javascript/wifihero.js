@@ -11,6 +11,10 @@ document.head.appendChild(jQueryScript);
 //var icons = "https://assets.mapquestapi.com/icon/v2/marker-7B0099@2x.png"
 
 //Mix Data Search/ Search Api (line 7)
+
+
+
+// I CHANGED THIS
 $.ajax({
     url: "http://www.mapquestapi.com/search/v2/search?key=05kGEvPvXnmEAEYmQ1LFJQOng6f3ECA4&maxMatches=10&shapePoints=40.099998,-76.305603&hostedData=mqap.ntpois|group_sic_code=?|799972&remoteData=1,point,40.099998,-76.305603&remoteData=2,linestring,40.099998,-76.305603,40.199998,-76.305603,40.199998,-76.405603",
     method: "GET"
