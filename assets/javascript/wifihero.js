@@ -14,11 +14,46 @@ document.head.appendChild(jQueryScript);
 
 
 
-// I CHANGED THIS
-$.ajax({
-    url: "http://www.mapquestapi.com/search/v2/search?key=05kGEvPvXnmEAEYmQ1LFJQOng6f3ECA4&maxMatches=10&shapePoints=40.099998,-76.305603&hostedData=mqap.ntpois|group_sic_code=?|799972&remoteData=1,point,40.099998,-76.305603&remoteData=2,linestring,40.099998,-76.305603,40.199998,-76.305603,40.199998,-76.405603",
-    method: "GET"
-})
+
+
+
+$("button").on("click", function(){
+    var search = $.(this).attr("#locName");
+
+    var queryUrl = "https://www.mapquestapi.com/search/v2/radius?origin=Atlanta,+CO&radius=0.15&maxMatches=10&ambiguities=ignore&hostedData=mqap.ntpois|group_sic_code=?|581208&outFormat=json&key=05kGEvPvXnmEAEYmQ1LFJQOng6f3ECA4";
+    $.ajax({
+        url: queryUrl,
+        method: "GET"
+    })
+
+    .then(function(response){
+        var results = response.data;
+
+
+           for (var i = 0; i < results.length; i++) {
+
+            if (results[i].rating !== "r" && results[i].rating !== "pg-13") {
+              var gifDiv = $("<div>");
+
+              var rating = results[i].rating;
+
+              var p = $("<p>").text("Rating: " + rating);
+
+              var personImage = $("<img>");
+
+              personImage.attr("src", results[i].images.fixed_height.url);
+
+              gifDiv.append(p);
+              gifDiv.append(personImage);
+
+              $("#gifs-appear-here").prepend(gifDiv);
+            }
+          }
+        })
+    })
+
+
+});
 
 
 $("button").on("click", function() {
@@ -32,16 +67,6 @@ $.ajax({
     method: "GET"
   })
 
-//Static map api (Line 9)
-  $.ajax({
-      url:"https://www.mapquestapi.com/staticmap/v5/map?key=05kGEvPvXnmEAEYmQ1LFJQOng6f3ECA4&center=Atlanta,GA&size=600,400@2x",
-      method:"GET" 
-  })
-//Icons Api (Line 11)
-  $.ajax({
-      url: "https://assets.mapquestapi.com/icon/v2/marker-7B0099@2x.png",
-      method:"GET"
-  })
 
 
 
