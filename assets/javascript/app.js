@@ -2,28 +2,19 @@
 //$("button").on("click", function(){
   //  var search = $(this).attr("#locName");
 
-   
+   // var queryUrl = "https://www.mapquestapi.com/search/v2/radius?origin=Atlanta,+CO&radius=0.15&maxMatches=10&ambiguities=ignore&hostedData=mqap.ntpois|group_sic_code=?|581208&outFormat=json&key=05kGEvPvXnmEAEYmQ1LFJQOng6f3ECA4";
+    //$.ajax({
+      //  url: queryUrl,
+        //method: "GET"
+    //})
 
-    $("button1").on("click", function(){
-      var userInput = $(this).attr("list-group");
-      $.ajax({
-          url: "https://www.mapquestapi.com/search/v2/radius?origin=atlanta,+&raGAdius=0.15&maxMatches=10&ambiguities=ignore&hostedData=mqap.ntpois|group_sic_code=?|581208&outFormat=json&key=05kGEvPvXnmEAEYmQ1LFJQOng6f3ECA4",
-          method: "GET"
-      })
-      .done(function(response){
-          console.log(response);
-  
-          var results1 = response.searchResults.fields.name;
-          
-          for (var i = 0; i < results1.length; i++){
-            if (results1[i])
-          }
-      });
-  
-  
-  
-
-  
+    $.ajax({
+        url: "https://www.mapquestapi.com/search/v2/radius?origin=atlanta,+&raGAdius=0.15&maxMatches=10&ambiguities=ignore&hostedData=mqap.ntpois|group_sic_code=?|581208&outFormat=json&key=05kGEvPvXnmEAEYmQ1LFJQOng6f3ECA4",
+        method: "GET"
+    })
+    .done(function(response){
+        console.log(response);
+    });
     //.then(function(response){
        // var results = response.data;
 
