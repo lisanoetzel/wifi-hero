@@ -1,8 +1,4 @@
 
-//$("button").on("click", function(){
-  //  var search = $(this).attr("#locName");
-
-   
 
     //$("button1").on("click", function() {
       //var userInput = $(this).attr("list-group");
@@ -28,86 +24,9 @@
             // console.log('are any of us real?')
             // console.log('my name is name is name', $('#row'+ (i+1) + '>.name')[0]);
           }
-              // if (results1[i])
-            // .then(function(response){
-          // var results = response.data;
+              
       })
-      // });
-    //});
-  
+      
   
 
-  //var results1 = response.searchResults.fields.name;
-          
-          //for (var i = 0; i < results1.length; i++){
-            //if (results1[i])
-    //.then(function(response){
-       // var results = response.data;
-
-
-           //for (var i = 0; i < results.length; i++) {
-
-            //if (results[i].rating !== "r" && results[i].rating !== "pg-13") {
-              //var gifDiv = $("<div>");
-
-              //var rating = results[i].rating;
-
-             /// var p = $("<p>").text("Rating: " + rating);
-
-              //var personImage = $("<img>");
-
-              //personImage.attr("src", results[i].images.fixed_height.url);
-
-              //gifDiv.append(p);
-              //gifDiv.append(personImage);
-
-              //$("#gifs-appear-here").prepend(gifDiv);
-            //}
-          //}
-        //})
-    //})
-
-
-
-
-//$("button").on("click", function() {
-
-//var allTogether = queryUrl1 + mixDataSearch + staticMap + icons; 
-
-//var results = [];
-//Wigle Api (Line 5)
-//$.ajax({
-   // url: "https://api.wigle.net/api/v2/profile/AID3aa44685dab3e53850838bf8aeecdf50:efa4e947d0df628c21d6ddcd62c58ab1",
-    //method: "GET"
-  //})
-
-
-
-
-
-
-
-
   
-
-  //.then(function(response) {
-    //var results = response.wifiNetworkWithLocation.locationData.signal;
-
-    //for (var i = 0; i < results.length; i++) {
-       // if (results[i]. results[i].locationData === signal ) {
-           // var signalDiv = $("<div>");
-           // var p = $("<p>").text("signal" + signal);
-            // signalDiv.append(p);
-
-
-       // }
-    
-    
-
-    //}
-    
-
-
-
-
-//}
