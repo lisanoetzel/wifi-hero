@@ -1,68 +1,32 @@
-var jQueryScript = document.createElement('script');  
-jQueryScript.setAttribute('src',"https://code.jquery.com/jquery-3.4.1.min.js");
-document.head.appendChild(jQueryScript);
 
 
-// I CHANGED THIS
-$.ajax({
-    url: "http://www.mapquestapi.com/search/v2/search?key=05kGEvPvXnmEAEYmQ1LFJQOng6f3ECA4&maxMatches=10&shapePoints=40.099998,-76.305603&hostedData=mqap.ntpois|group_sic_code=?|799972&remoteData=1,point,40.099998,-76.305603&remoteData=2,linestring,40.099998,-76.305603,40.199998,-76.305603,40.199998,-76.405603",
-    method: "GET"
-});
+    //$("button1").on("click", function() {
+      //var userInput = $(this).attr("list-group");
+      $.ajax({
+          url: "https://www.mapquestapi.com/search/v2/radius?origin=atlanta,+&raGAdius=0.15&maxMatches=10&ambiguities=ignore&hostedData=mqap.ntpois|group_sic_code=?|581208&outFormat=json&key=05kGEvPvXnmEAEYmQ1LFJQOng6f3ECA4",
+          method: "GET"
+      })
+      .done(function(response){
+           console.log(response.searchResults);
+           console.log(response.searchResults[0].name);
+          //  console.log('blahbitty blah')
+          // for each of 10 responses
+          for (var i = 0; i < response.searchResults.length; i++){
+            // grab name and address
+            let name = response.searchResults[i].name;
+            let address = response.searchResults[i].fields.address;
+            $('#row'+ (i+1) + '>.name')[0].append(name + address);
+            $('#row1>.name')
 
-
-$("button").on("click", function() {
-
-var allTogether = queryUrl1 + mixDataSearch + staticMap + icons; 
-
-var results = [];
-//Wigle Api (Line 5)
-$.ajax({
-    url: "https://api.wigle.net/api/v2/network/detail/netid/operator/lac/cid/type/system/network/basestation/profile/AID3aa44685dab3e53850838bf8aeecdf50:efa4e947d0df628c21d6ddcd62c58ab1",
-    method: "GET"
-  });
-console.log(response);
-
-
-//Static map api (Line 9)
-  $.ajax({
-      url:"https://www.mapquestapi.com/staticmap/v5/map?key=05kGEvPvXnmEAEYmQ1LFJQOng6f3ECA4&center=Atlanta,GA&size=600,400@2x",
-      method:"GET" 
-  });
-//Icons Api (Line 11)
-  $.ajax({
-      url: "https://assets.mapquestapi.com/icon/v2/marker-7B0099@2x.png",
-      method:"GET"
-  })
-
-
-
-
-
-
-
+            // put name and address on screen
+            // use jquery to grab any child witht he class of name that has a parent of
+            // $('#row'+(i+1)+'>.name')
+            // console.log('are any of us real?')
+            // console.log('my name is name is name', $('#row'+ (i+1) + '>.name')[0]);
+          }
+              
+      })
+      
   
 
-  .then(function(response) {
-    var results = response.wifiNetworkWithLocation.locationData.signal;
-
-    for (var i = 0; i < results.length; i++) {
-        if (results[i]. results[i].locationData === signal ) {
-            var signalDiv = $("<div>");
-            var p = $("<p>").text("signal" + signal);
-             signalDiv.append(p);
-
-
-        }
-    
-    
-
-    }
-    
-
-
-
-
-});
-
-
-
+  
