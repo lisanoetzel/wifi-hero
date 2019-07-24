@@ -14,6 +14,8 @@ $(document).ready(function(){
          //console.log(response.searchResults[0].name);
         //  console.log('blahbitty blah')
         // for each of 10 responses
+
+        $("#search-input").empty();
         for (var i = 0; i < response.searchResults.length; i++){
           // grab name and address
           let name = response.searchResults[i].name;
@@ -26,8 +28,7 @@ $(document).ready(function(){
           // $('#row'+(i+1)+'>.name')
           // console.log('are any of us real?')
           // console.log('my name is name is name', $('#row'+ (i+1) + '>.name')[0]);
-        }
-        $("#search-input").empty();
+        };
             
     })
   });
