@@ -27,9 +27,9 @@ $(document).ready(function(){
           // console.log('are any of us real?')
           // console.log('my name is name is name', $('#row'+ (i+1) + '>.name')[0]);
         }
+        $("#search-input").empty();
             
     })
-
   });
 
     
