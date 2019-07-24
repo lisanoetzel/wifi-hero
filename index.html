@@ -16,11 +16,7 @@
 </head>
 
 <body>
-    <!--This is the JS Link -->
-    <script type="text/javascript" src="assets/javascript/wifihero.js">
-    </script>
-    <!-- Choreographer JS Link (New Technology) -->
-
+    
     <!-- Logo Begin -->
     <div id="logo">
         <a href="/index.html">
@@ -63,8 +59,8 @@
         <p>Use WiFi Hero to search for free WiFi in
             cafes, restaurants, hotels, coffee shops, airports, fast food, cities, regions and countries.</p>
         <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="text" placeholder="Wifi Hero Me Here">
-            <button class="btn btn-primary my-2 my-sm-0" id="button1" type="submit">Search</button>
+            <input class="form-control mr-sm-2" id="search-input" type="text" placeholder="Wifi Hero Me Here">
+            <button class="btn btn-primary my-2 my-sm-0" id="search-button" type="submit">Search</button>
         </form>
         </p>
     </div>
@@ -83,63 +79,63 @@
             <tbody>
                 <tr class="table-active" id="row1">
                     <th scope="row">1</th>
-                    <td>Name of Wifi Results Should Appear Here</td>
-                    <td>Address of Wifi Results Should Appear Here</td>
-                    <td>Signal Strength of Wifi Results Should Appear Here</td>
+                    <td class="name"></td>
+                    <td class="address"></td>
+                    <td></td>
                 </tr>
                 <tr class="table-light" id="row2">
                     <th scope="row">2</th>
-                    <td>Name of Wifi Results Should Appear Here</td>
-                    <td>Address of Wifi Results Should Appear Here</td>
-                    <td>Signal Strength of Wifi Results Should Appear Here</td>
+                    <td class="name"></td>
+                    <td class="address"></td>
+                    <td></td>
                 </tr>
                 <tr class="table-light" id="row3">
                     <th scope="row">3</th>
-                    <td>Name of Wifi Results Should Appear Here</td>
-                    <td>Address of Wifi Results Should Appear Here</td>
-                    <td>Signal Strength of Wifi Results Should Appear Here</td>
+                    <td class="name"></td>
+                    <td class="address"></td>
+                    <td></td>
                 </tr>
                 <tr class="table-light" id="row4">
                     <th scope="row">4</th>
-                    <td>Name of Wifi Results Should Appear Here</td>
-                    <td>Address of Wifi Results Should Appear Here</td>
-                    <td>Signal Strength of Wifi Results Should Appear Here</td>
+                    <td class="name"></td>
+                    <td class="address"></td>
+                    <td></td>
                 </tr>
                 <tr class="table-light" id="row5">
                     <th scope="row">5</th>
-                    <td>Name of Wifi Results Should Appear Here</td>
-                    <td>Address of Wifi Results Should Appear Here</td>
-                    <td>Signal Strength of Wifi Results Should Appear Here</td>
+                    <td class="name"></td>
+                    <td class="address"></td>
+                    <td></td>
                 </tr>
                 <tr class="table-light" id="row6">
                     <th scope="row">6</th>
-                    <td>Name of Wifi Results Should Appear Here</td>
-                    <td>Address of Wifi Results Should Appear Here</td>
-                    <td>Signal Strength of Wifi Results Should Appear Here</td>
+                    <td class="name"></td>
+                    <td class="address"></td>
+                    <td></td>
                 </tr>
                 <tr class="table-light" id="row7">
                     <th scope="row">7</th>
-                    <td>Name of Wifi Results Should Appear Here</td>
-                    <td>Address of Wifi Results Should Appear Here</td>
-                    <td>Signal Strength of Wifi Results Should Appear Here</td>
+                    <td class="name"></td>
+                    <td class="address"></td>
+                    <td></td>
                 </tr>
                 <tr class="table-light" id="row8">
                     <th scope="row">8</th>
-                    <td>Name of Wifi Results Should Appear Here</td>
-                    <td>Address of Wifi Results Should Appear Here</td>
-                    <td>Signal Strength of Wifi Results Should Appear Here</td>
+                    <td class="name"></td>
+                    <td class="address"></td>
+                    <td></td>
                 </tr>
                 <tr class="table-light" id="row9">
                     <th scope="row">9</th>
-                    <td>Name of Wifi Results Should Appear Here</td>
-                    <td>Address of Wifi Results Should Appear Here</td>
-                    <td>Signal Strength of Wifi Results Should Appear Here</td>
+                    <td class="name"></td>
+                    <td class="address"></td>
+                    <td></td>
                 </tr>
                 <tr class="table-light" id="row10">
                     <th scope="row">10</th>
-                    <td>Name of Wifi Results Should Appear Here</td>
-                    <td>Address of Wifi Results Should Appear Here</td>
-                    <td>Signal Strength of Wifi Results Should Appear Here</td>
+                    <td class="name"></td>
+                    <td class="address"></td>
+                    <td></td>
                 </tr>
             </tbody>
         </table>
@@ -148,25 +144,21 @@
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script type="text/javascript">
-
-        $.ajax({
-            url: "https://api.wigle.net/api/v2/network/search?onlymine=false&first=0&freenet=true&paynet=false&postalCode=30339&resultsPerPage=10",
-            method: "GET",
-            crossDomain: true,
-            beforeSend: function (xhr) {
-                xhr.setRequestHeader('Authorization', 'Basic ' + btoa(unescape(encodeURIComponent("AIDdee33fecc5f3132fb31b3ea300594139" + ':' + "06a213475b72b47f4b9752d36caec370"))))
-            }
-        })
-            .then(function (response) {
-                console.log(response);
-                console.log(response.Runtime);
-            });
-
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"> </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <!--This is the JS Link -->
+    <script type="text/javascript" src="assets/javascript/wifihero.js">
     </script>
-
-
 </body>
 
 </html>
+
+<!-- -->
