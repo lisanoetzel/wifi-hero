@@ -27,7 +27,6 @@ $(document).ready(function () {
           }
         } else {
           //console.log below that will show results based off of success within api results from Wigle if enabled
-          //console.log("successful", response.success)
           console.log("message:", response.message)
         }
         //WIGLE API FULL CALL ENDS//
@@ -50,16 +49,10 @@ $(document).ready(function () {
                 let address = response.searchResults[i].fields.address;
                 $('#row' + (i + 1) + '>.name')[0].append(name);
                 $('#row' + (i + 1) + '>.address')[0].append(address);
-                //console.log($($('#row' + (i + 1) + '>.address')[0]));
-                // put name and address on screen
-                // use jquery to grab any child witht he class of name that has a parent of
-                // $('#row'+(i+1)+'>.name')
-                // console.log('are any of us real?')
-                // console.log('my name is name is name', $('#row'+ (i+1) + '>.name')[0]);
+             
               }
             } else {
-              //console.log below that will show results based off of success within api results from Mapquest if enabled
-              //console.log("successful", response.success)
+              //console.log below that will show results based off of success within api results from Mapquest if enabled//
               console.log("message:", response.message)
             }
         //MAPQUEST API FULL CALL ENDS//
