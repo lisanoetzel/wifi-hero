@@ -91,18 +91,14 @@ $(document).ready(function () {
 
 
           //ONCE CALLS ARE COMPLETED AND RESULTS PRINT TO PAGE, CLEAR THE SEARCH BAR FOR THE NEXT SEARCH//
-          .done(function (response) {
-            //console.log(response.searchResults);
-            //console.log(response.searchResults[0].name);
-            //  console.log('blahbitty blah')
-            // for each of 10 responses
-            $("#search-input").empty();
-
+          $('#clear').on('click', function() {
+            //alert("This clears the data");
+          });
           });
       });
 >>>>>>> 0fc9c714c83d86d63cf246d724456f23e5c0ce44
   });
- });
+ 
 
 
 
